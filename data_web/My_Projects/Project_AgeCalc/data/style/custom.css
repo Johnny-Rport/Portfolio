@@ -1,0 +1,58 @@
+html#AgeCalculator {
+    font-family: cursive;
+    max-width: 1in;
+    min-width: 300px;
+    max-height: 1200px;
+    background: linear-gradient(180deg, hsl(95deg, 50%, 50%), hsl(180, 50%, 50%));
+    background-size: 50cm;
+    max-zoom: 100%;
+    min-zoom: 90%;
+}
+h1#heading {
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+    margin-left: 2in;
+}
+label {
+    font-size: 12px;
+    margin-left: 0in;
+    opacity: 5%;
+}
+div#grid {
+    display: grid;
+    height: 700px;
+    width: 500px;
+    row-gap: 1cm;
+    margin: 0in 2in;  
+    margin-bottom:158px;
+}
+.block {
+    text-align: center;
+    font-size: 50px;
+    border: solid black 2px;
+    font-family: cursive;
+}
+button:hover {
+    background-color: black;
+    color: white;
+    transition: color 100ms ease-in 80ms, background-color 100ms ease-in 80ms;
+}
+button {
+    transition: color 100ms ease-out 80ms, background-color 100ms ease-out 80ms;
+}
+div#result {
+    padding-top: 1cm;
+    padding-bottom: 25px;
+    background-color: white;
+}
+a {
+    font-size: 50px;
+    color: blue;
+    text-align: center;
+    border-left: solid black 5px;
+    border-right: solid black 5px;
+    margin: 1in 5in;
+    padding: 0in 1in;
+    
+}
