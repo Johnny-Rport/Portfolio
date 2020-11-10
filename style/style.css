@@ -40,11 +40,12 @@ ul.navigation {
     border-bottom: solid red;
     padding: 0cm 0cm;
     margin: 0.5cm 1cm;
+    transition: border 200ms ease-out 300ms, background 400ms ease-out 100ms;
 }
 .navigation:hover {
     border: solid darkblue;
     background-color: darkblue;
-    transition: border 200ms ease 100ms, color 400ms ease-in 100ms;
+    transition: border 200ms ease-in 100ms, background 400ms ease-in 100ms;
 }
 ul.navigation ul a.drop_1 {
     display: none;
