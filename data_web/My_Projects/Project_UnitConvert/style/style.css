@@ -1,0 +1,71 @@
+html {
+    background: black;
+}
+body {
+    height: 9in;
+    width: 6.8in;
+    border: solid white;
+    background: black;
+}
+p {
+    color: yellow;
+}
+div {
+    border: solid yellow;
+    padding-left: 25px;
+    margin-top: 1cm;
+    margin-right: 37px;
+}
+nav.first {
+    border: solid yellow;
+    padding-left: 25px;
+    padding-top: 0.25cm;
+    margin-top: 0.25cm;
+    margin-left: 1cm;
+    margin-right: 7cm;
+}
+input {
+    background: black;
+    color: yellow;
+}
+button {
+    background: black;
+    color: yellow;
+    border: none;
+}
+button:hover {
+    border: solid white 2px;
+    transition: 200ms ease-in 10ms;
+}
+.hide {
+    display: none;
+}
+.equal {
+    margin-left: 0.75in;
+}
+.reset {
+    float: right;
+    font-size: 40px;
+    margin-right: 11.52px;
+    margin-top: 1in;
+    background: black;
+    color: yellow;
+    border: solid yellow;
+    border-radius: 5%;
+}
+.reset:hover {
+    background: yellow;
+    color: black;
+    transition: 100ms ease-in 100ms;
+}
+.back {
+    text-align: left;
+    border-top: none;
+    border-bottom: none;
+    border-right: solid white;
+    border-left: solid white;
+    margin-top: 35px;
+    margin-left: 2.8in;
+    margin-right: 3.1in;
+
+}

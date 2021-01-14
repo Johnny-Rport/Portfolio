@@ -19,9 +19,6 @@ class Agecalc { //* This is an object class that defines objects through a class
         this.currentYear = currentYear
         this.result = result;
     }
-    /*output () { //* the class object would then contain the various functions with the class, this is a very simple version
-        this.birthYear.value = this.result.innerHTML
-    }*/
     showYear () { //IT WORKS
         let age = this.currentYear.value - this.birthYear.value;
         this.result.innerHTML = `You are ${age} years old!`
