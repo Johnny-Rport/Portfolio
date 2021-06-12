@@ -4,7 +4,7 @@ html {
 body {
     height: 9in;
     width: 6.8in;
-    border: solid white;
+    border: solid transparent;
     background: black;
 }
 p {
@@ -68,4 +68,8 @@ button:hover {
     margin-left: 2.8in;
     margin-right: 3.1in;
 
+}
+a {
+    
+    color: white;
 }

@@ -1,5 +1,5 @@
 html#home {
-    font-family: "Lucida Handwriting", cursive;
+    font-family: "Baloo Tammudu 2", cursive;
     background-color: rgb(0, 0, 0);
     min-width: 1500px;
     width: 100%;
@@ -8,6 +8,7 @@ html#home {
 #welcome {
     background-image: url(http://en.es-static.us/upl/2013/03/underwater-ocean-light.jpg);
     background-size: cover;
+    background-position: center;
     height: 950px;
     width: 100%;
 }
@@ -31,7 +32,10 @@ label#cred a#picture_cred {
     color: black;
     text-decoration: underline;
 }
-ul.navigation {
+a.navigation {
+    text-decoration: none;
+}
+.navigation {
     font-size: 18px;
     position: relative;
     z-index: 5;
@@ -99,7 +103,7 @@ body.home div h3 {
     font-size: 20px;
     text-align: left;
     border-bottom: solid 2px;
-    margin-right: 11in;
+    margin-right: 9in;
     margin-left: 4in;
 }
 h3 button#des_button {
