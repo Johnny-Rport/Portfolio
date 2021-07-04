@@ -1,0 +1,43 @@
+html {
+    background-color: hsl(180, 100%, 80%);
+    margin: 1in;
+}
+
+p#text {
+    color: Red;
+    background-color: red;
+    margin-right: 80%;
+}
+
+input#attempts {
+    color: black;
+    border: none;
+    background-color: transparent;
+}
+
+button.button {
+    background-color:hsl(180, 100%, 80%);
+    color:hsl(34, 100%, 50%);
+}
+
+button.button:hover {
+    background-color: hsl(34, 100%, 50%);
+    color: hsl(180, 100%, 80%);
+}
+
+button#mode {
+    background-color: black;
+    color: black;
+    border-radius: 100%;
+    color: transparent;
+    font-size: 10px
+}
+
+button#mode:hover {
+    background-color:hsl(34, 100%, 50%);
+    color: hsl(34, 100%, 50%);
+}
+
+ul {
+    text-decoration: none;
+}

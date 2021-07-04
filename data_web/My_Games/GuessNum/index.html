@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <link href="./resources/style.css" rel="stylesheet" text="css/text">
+    <head>
+        
+        <title>GMN</title>
+    </head>
+
+    <body>
+        <h1>Guess My Number!</h1>
+        <label>Attempts: </label> <input id="attempts" type="number" value="0" disabled>
+        <p id="text">Answer</p> 
+        <input placeholder="Put you guess here!" type="number" id="guess">
+        <button class="button" id="submit">Submit</button>
+        <button class="button" id="change">Change Number</button>
+        <button class="button" id="reset">Reset Attempts</button>
+
+        <br> <br>
+
+        <ul> <!--Options to Change difficulty-->
+            <p>- Mode is a 1 to 10 game by default.</p>
+            <ul><button id="mode" mode1>H</button> <label>1 to 10 Game</label> </ul>
+            <ul><button id="mode" mode2>H</button> <label>1 to 50 Game</label> </ul>   
+            <ul><button id="mode" mode3>H</button> <label>1 to 100 Game</label></ul>
+        </ul>
+        
+    </body>
+
+    <script src="./resources/script.js"></script>
+</html>
