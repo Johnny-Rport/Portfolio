@@ -1,6 +1,6 @@
 html.page {
-    font-family: cursive;
-    background-color: rgb(235, 235, 235);
+    font-family: "Baloo Tammudu 2", cursive;
+    background-color: hsl(180, 100%, 80%);
     margin: 0.5in 3in;
     border: dotted black 5px;
     border-radius: 3%;
