@@ -4,3 +4,27 @@ html {
     margin: 0;
     padding: 0;
 }
+
+input#hour {
+    width: 245px;
+}
+
+input#day {
+    width: 245px;
+}
+
+div.output {
+    border: solid 1px black;
+    width: fit-content;
+    padding: 0px 5px;
+}
+
+div.output label {
+    border-bottom: solid black 1px;
+    width: max-content;
+}
+
+div.output label#result {
+    text-align: center;
+    padding-left: 10px;
+}

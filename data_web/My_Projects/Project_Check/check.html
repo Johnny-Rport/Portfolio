@@ -8,10 +8,33 @@
     </head>
     
     <body>
-        <p>This is a page for calculating checks and will give daily, weekly, monthly, and yearly salaries based on amount of hours worked for each day worked.</p>
-        <p>The question will be asked for hours and days, it will then give a table that will show the previously mentioned salaries, also options to reset these records are optional, and maybe implement a way to compare two different sets.</p>
-        <input placeholder="How many hours did you work this week?" Hour>
-        <input placeholder="How many days did you work this week?" Week>
-        <button>Daily Pay</button> <button>Yearly Pay</button> <button>Monthly Pay</button> <button>Weekly Pay</button> <button>Check Pay</button>
+        <section>
+           <p>This is a page for calculating checks and will give daily, weekly, monthly, and yearly salaries based on amount of hours worked for each day worked.</p>
+           <p>The question will be asked for hours and days, it will then give a table that will show the previously mentioned salaries, also options to reset these records are optional, and maybe implement a way to compare two different sets.</p>
+        </section>
+        
+        <div class="input">
+            <input id="hour" placeholder="How many hours did you work this week?" hour>
+            <input id="day" placeholder="How many days did you work this week?" day>
+            <button id="submit" submit>Submit</button>
+        </div>
+        
+        
+        <div class="button">
+            <button disabled daily>Daily Pay</button>
+            <button disabled weekly>Weekly Pay</button> 
+            <button disabled monthly>Monthly Pay</button> 
+            <button disabled yearly>Yearly Pay</button> 
+            <button disabled check>Check Pay</button>
+        </div>
+
+        <div class="output">
+            <label>Salary: </label>
+            <br>
+            <label id="result">pay</label>
+        </div>
+
     </body>
+
+    <script src="logic/logic.js"></script>
 </html>
