@@ -13,9 +13,13 @@
            <p>The question will be asked for hours and days, it will then give a table that will show the previously mentioned salaries, also options to reset these records are optional, and maybe implement a way to compare two different sets.</p>
         </section>
         
-        <div class="input">
-            <input id="hour" placeholder="How many hours did you work this week?" hour>
-            <input id="day" placeholder="How many days did you work this week?" day>
+        <div class="input"> 
+            <label>Hours:</label>
+            <input id="hour" placeholder="How many hours did you work?" type="number" hour>
+            <button id="reset" reset>Reset</button>
+            <br>
+            <label>Days:</label>
+            <input id="day" placeholder="How many days did you work this week?" type="number" day>
             <button id="submit" submit>Submit</button>
         </div>
         
@@ -32,6 +36,10 @@
             <label>Salary: </label>
             <br>
             <label id="result">pay</label>
+        </div>
+
+        <div>
+            <button>Calculator</button>
         </div>
 
     </body>
