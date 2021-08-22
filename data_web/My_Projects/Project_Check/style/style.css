@@ -4,3 +4,13 @@ html {
     margin: 0;
     padding: 0;
 }
+
+table {
+    border: solid black 1px
+}
+
+
+table tr#secondrow td {
+    border: solid black 1px;
+    padding: 10px ;
+}
