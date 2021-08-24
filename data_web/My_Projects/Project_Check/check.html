@@ -8,39 +8,10 @@
     </head>
     
     <body>
-        
         <p>This is a page for calculating checks and will give daily, weekly, monthly, and yearly salaries based on amount of hours worked for each day worked.</p>
         <p>The question will be asked for hours and days, it will then give a table that will show the previously mentioned salaries, also options to reset these records are optional, and maybe implement a way to compare two different sets.</p>
-        
-        <div>
-            <input placeholder="Wage" type="number" wage> <br>
-            <input placeholder="Hours" type='number' Hour> <button reset>Reset</button> <br>
-            <input placeholder="Days" type='number' Day> <button submit>Submit</button>
-        </div>
-        
-        <div>
-
-        <button disabled  daily>Daily Pay</button>
-        <button disabled  yearly>Yearly Pay</button>
-        <button disabled monthly>Monthly Pay</button>
-        <button disabled weekly>Weekly Pay</button>
-        <button disabled check>Check Pay</button>
-
-        </div>
-
-        <div>
-            <table>
-                <tr id='firstrow' >
-                    <td>Salary</td>
-                </tr>
-                <tr id='secondrow'>
-                    <td result>Pay: </td>
-                </tr>
-            </table>
-        </div>
-
+        <input placeholder="How many hours did you work this week?" Hour>
+        <input placeholder="How many days did you work this week?" Week>
+        <button>Daily Pay</button> <button>Yearly Pay</button> <button>Monthly Pay</button> <button>Weekly Pay</button> <button>Check Pay</button>
     </body>
-
-
-    <script src="logic/logic.js" ></script>
 </html>
