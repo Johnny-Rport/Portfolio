@@ -51,7 +51,8 @@ submit.addEventListener('click', ()=> {
         pay.forEach(button => {
             button.removeAttribute('disabled')
             button.addEventListener('click', () => {
-                calcPay(button.innerText[0], inputWage.value, hours.value, days.value)
+                let change = false
+                calcPay(button.innerText[0], inputWage.value, hours.value, days.value, change)
             })
         })
     }
@@ -67,7 +68,8 @@ submit2.addEventListener('click', ()=> { //Instead of copying the first button t
         pay.forEach(button => {
             button.removeAttribute('disabled')
             button.addEventListener('click', () => {
-                calcPay(button.innerText[0], inputWage2.value, hours2.value, days2.value)
+                let change = true
+                calcPay(button.innerText[0], inputWage2.value, hours2.value, days2.value, change)
             })
         })
     }
@@ -86,34 +88,64 @@ compare.addEventListener('click', () => {
 })
 
 
-function calcPay (input, wage, hours, days) {
-    let week = 2 //Weeks
+function calcPay (input, wage, hour, day, compare) {
+    let week = 2 // In Weeks
     let month = 4
     let year = 48 
     switch (input) {
         case "D":
-            x  = (wage * hours)
-            outputP.innerText = 'Pay: $' + x
+            if (compare == false) {
+                x  = (wage * hour)
+                outputP.innerText = `Pay: $${x}`
+            } else if (compare == true) {  
+                x = (wage * hour) //Second Set
+                y = (inputWage.value * hours.value) // First Set
+                outputP.innerText = `First set of Pay: $${y} and  Second Set of Pay: $${x}`
+            }
         break;
 
         case "Y":
-            x  = (wage * hours * days * year )
-            outputP.innerText = 'Pay: $' + x
+            if (compare == false) {
+                x  = (wage * hour * day * year)
+                outputP.innerText = `Pay: $${x}`
+            } else if (compare == true) {  
+                x = (wage * hour * day * year) 
+                y = (inputWage.value * hours.value * days.value * year )
+                outputP.innerText = `First set of Pay: $${y} and  Second Set of Pay: $${x}`
+            }
         break;
 
         case "M":
-            x  = (wage * hours * days * month)
-            outputP.innerText = 'Pay: $' + x
+            if (compare == false) {
+                x  = (wage * hour * day * month)
+                outputP.innerText = `Pay: $${x}`
+            } else if (compare == true) {  
+                x = (wage * hour * day * month) 
+                y = (inputWage.value * hours.value *days.value * month )
+                outputP.innerText = `First set of Pay: $${y} and  Second Set of Pay: $${x}`
+            }
         break;
 
         case "W":
-            x  = (wage * hours * days)
-            outputP.innerText = 'Pay: $' + x
+            if (compare == false) {
+                x  = (wage * hour * day)
+                outputP.innerText = `Pay: $${x}`
+            } else if (compare == true) {  
+                x = (wage * hour * day) 
+                y = (inputWage.value * hours.value *days.value )
+                outputP.innerText = `First set of Pay: $${y} and  Second Set of Pay: $${x}`
+            }
         break;
 
         case "C":
-            x  = (wage * hours * days * week)
-            outputP.innerText = 'Pay: $' + x
+            if (compare == false) {
+                x  = (wage * hour * day * week)
+                outputP.innerText = `Pay: $${x}`
+            } else if (compare == true) {  
+                x = (wage * hour * day * week) 
+                y = (inputWage.value * hours.value *days.value * week )
+                outputP.innerText = `First set of Pay: $${y} and  Second Set of Pay: $${x}`
+            }
         break;
 
     }
