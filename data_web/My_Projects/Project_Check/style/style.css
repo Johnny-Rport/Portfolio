@@ -5,6 +5,19 @@ html {
     padding: 0;
 }
 
+div.shown {
+    position: absolute;
+}
+
+div.hidden{
+    position: absolute;
+}
+
+div.buttonPay {
+    padding-top: 110px;
+    padding-bottom: 20px;
+}
+
 table {
     border: solid black 1px
 }
