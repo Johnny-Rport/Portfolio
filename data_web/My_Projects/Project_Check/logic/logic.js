@@ -100,7 +100,7 @@ function calcPay (input, wage, hour, day, compare) {
             } else if (compare == true) {  
                 x = (wage * hour) //Second Set
                 y = (inputWage.value * hours.value) // First Set
-                outputP.innerText = `First set of Pay: $${y} and  Second Set of Pay: $${x}`
+                outputP.innerText = `For working ${hours.value} hours you get paid: $${y}. For working ${hour} hours you get paid: $${x}`
             }
         break;
 
@@ -111,7 +111,8 @@ function calcPay (input, wage, hour, day, compare) {
             } else if (compare == true) {  
                 x = (wage * hour * day * year) 
                 y = (inputWage.value * hours.value * days.value * year )
-                outputP.innerText = `First set of Pay: $${y} and  Second Set of Pay: $${x}`
+                outputP.innerText = `By working ${days.value} days with ${hours.value} hours each, the salary is: $${y}. With ${day} days and ${hour} hours each your salary pay is: $${x}`
+
             }
         break;
 
@@ -122,7 +123,7 @@ function calcPay (input, wage, hour, day, compare) {
             } else if (compare == true) {  
                 x = (wage * hour * day * month) 
                 y = (inputWage.value * hours.value *days.value * month )
-                outputP.innerText = `First set of Pay: $${y} and  Second Set of Pay: $${x}`
+                outputP.innerText = `By working ${days.value} days with ${hours.value} hours each, the monthly pay will be: $${y}. With ${day} days and ${hour} hours each your monthly pay is: $${x}`
             }
         break;
 
@@ -133,7 +134,7 @@ function calcPay (input, wage, hour, day, compare) {
             } else if (compare == true) {  
                 x = (wage * hour * day) 
                 y = (inputWage.value * hours.value *days.value )
-                outputP.innerText = `First set of Pay: $${y} and  Second Set of Pay: $${x}`
+                outputP.innerText = `By working ${days.value} days with ${hours.value} hours each, you get paid: $${y}. With ${day} days and ${hour} hours each you get paid: $${x}`
             }
         break;
 
@@ -144,7 +145,7 @@ function calcPay (input, wage, hour, day, compare) {
             } else if (compare == true) {  
                 x = (wage * hour * day * week) 
                 y = (inputWage.value * hours.value *days.value * week )
-                outputP.innerText = `First set of Pay: $${y} and  Second Set of Pay: $${x}`
+                outputP.innerText = `By working ${days.value} days with ${hours.value} hours each, the check will be: $${y}. With ${day} days and ${hour} hours each your check is: $${x}`
             }
         break;
 

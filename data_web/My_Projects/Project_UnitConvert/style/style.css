@@ -1,23 +1,24 @@
 html {
-    background: black;
+    font-family: "Baloo Tammudu 2", cursive;
+    background-color: hsl(180, 100%, 80%);
+
 }
 body {
     height: 9in;
     width: 6.8in;
     border: solid transparent;
-    background: black;
 }
 p {
-    color: yellow;
+    color: orange;
 }
 div {
-    border: solid yellow;
+    border: solid orange;
     padding-left: 25px;
     margin-top: 1cm;
     margin-right: 37px;
 }
 nav.first {
-    border: solid yellow;
+    border: solid orange;
     padding-left: 25px;
     padding-top: 0.25cm;
     margin-top: 0.25cm;
@@ -25,16 +26,16 @@ nav.first {
     margin-right: 7cm;
 }
 input {
-    background: black;
-    color: yellow;
+    background: hsl(180, 100%, 80%);
+    color: orange;
 }
 button {
-    background: black;
-    color: yellow;
+    background: hsl(253, 84%, 62%);
+    color: orange;
     border: none;
 }
 button:hover {
-    border: solid white 2px;
+    border: solid orange 2px;
     transition: 200ms ease-in 10ms;
 }
 .hide {
@@ -48,28 +49,27 @@ button:hover {
     font-size: 40px;
     margin-right: 11.52px;
     margin-top: 1in;
-    background: black;
-    color: yellow;
-    border: solid yellow;
+    background: hsl(180, 100%, 80%);
+    color: orange;
+    border: solid orange;
     border-radius: 5%;
 }
 .reset:hover {
-    background: yellow;
-    color: black;
+    background: orange;
+    color: hsl(180, 100%, 80%);
     transition: 100ms ease-in 100ms;
 }
 .back {
     text-align: left;
     border-top: none;
     border-bottom: none;
-    border-right: solid white;
-    border-left: solid white;
+    border-right: solid hsl(253, 84%, 62%);
+    border-left: solid hsl(253, 84%, 62%);
     margin-top: 35px;
     margin-left: 2.8in;
     margin-right: 3.1in;
 
 }
 a {
-    
-    color: white;
+    color: black;
 }

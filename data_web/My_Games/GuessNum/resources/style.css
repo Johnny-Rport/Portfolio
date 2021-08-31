@@ -1,6 +1,7 @@
 html {
     background-color: hsl(180, 100%, 80%);
     margin: 1in;
+    font-family: "Baloo Tammudu 2", cursive;
 }
 
 p#text {

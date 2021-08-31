@@ -5,6 +5,7 @@ const des3 = document.querySelector('[valueAsDes3]');
 const des4 = document.querySelector('[valueAsDes4]');
 const des5 = document.querySelector('[valueAsDes5]');
 const des6 = document.querySelector('[valueAsDes6]');
+const des7 = document.querySelector('[valueAsDes7]');
 
 let buttonMode = 1;
 function showy(x) {

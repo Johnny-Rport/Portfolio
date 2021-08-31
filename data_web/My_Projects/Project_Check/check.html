@@ -5,11 +5,12 @@
         <link rel="stylesheet" href="style/style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     
     <body>
-        <p>This is a page for calculating checks and will give daily, weekly, monthly, and yearly salaries based on amount of hours worked for each day worked.</p>
-        <p>The question will be asked for hours and days, it will then give a table that will show the previously mentioned salaries, also options to reset these records are optional, and maybe implement a way to compare two different sets.</p>
+        <p>What is this? Well it's a project that I decided to create when I got tired of manually calculating my future pay based on the days I worked each week, before taxes unfortunately.</p>
+        <p>So this program gives an <em>estimation</em> based on the wage made each hour, hours worked each day, and days worked in each week. I'll personally be using this when I'm budgeting.</p>
         
         <div class="shown">
             <input placeholder="Wage" type="number" shown  wage> <br>
@@ -43,12 +44,11 @@
                 <tr id='secondrow'>
                     <td result>Pay: </td>
                 </tr>
-                <tr>
-                    <td diff hidden>Difference: </td>
-                </tr>
             </table>
         </div>
 
+
+        <a href="/index.html">Back</a>
     </body>
 
     <script src="logic/logic.js"></script>
