@@ -3,4 +3,4 @@ After a while, this website of mine is still not professional, and is very amate
 
 Most if not all my problems that I originally had has been fixed, even the linking system where I originally had to predict the url if it was in this site into my personal build  in order to make the linking work, however, I since fixed that and can now navigate my version as if it was a working build in this location.
 
-I am far from an expert, but looking back, my understanding is vastly greater than when I only knew how to use HTML and CSS. Anyhoo [Here's the link to my website](https://johnny-rport.github.io/Portfolio/)
+I am far from an expert, but looking back, my understanding is vastly greater than when I only knew how to use HTML and CSS. Anyhoo [Here's the link to my website](https://johnnyportfolio.dev/)
