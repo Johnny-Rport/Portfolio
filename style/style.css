@@ -41,12 +41,12 @@ a.nav {
     font-size: 100%;
     position: relative;
     z-index: 5;
-    background-color: transparent;
+    background-color: black;
     word-spacing: 1px;
     color: white;
     float: left;
     border-bottom: solid red;
-    padding: 0cm 0cm;
+    padding: 0cm 2cm;
     margin: 3vh 2vh;
     transition: border 200ms ease-out 300ms, background 400ms ease-out 100ms;
 }
