@@ -1,4 +1,4 @@
-/*General; should be used for all pages maybe?*/
+/*Must reconfigure font sizes in order to accomodate it for mobile and Desktop*/
 * {
     font-family: "Baloo Tammudu 2", cursive;
     margin: 0;
@@ -38,7 +38,7 @@ a.nav {
     text-decoration: none;
 }
 .nav {
-    font-size: 18px;
+    font-size: 100%;
     position: relative;
     z-index: 5;
     background-color: transparent;
@@ -52,11 +52,13 @@ a.nav {
 }
 .nav:hover {
     border: solid darkblue;
+    border-radius: 10px;
     background-color: darkblue;
     transition: border 200ms ease-in 100ms, background 400ms ease-in 100ms;
 }
 ul.nav ul a.drop {
     display: none;
+    border-radius: 10px;
     border-width: 1vh;
     text-align: center;
 }
@@ -80,25 +82,24 @@ body {
     padding-bottom: 10vh;
 }
 p {
-    font-size: 18;
-    padding: 0vh 44vh;
-    min-width: 50%;
+    font-size: 1.8vh;
+    padding: .5vw 4vw;
 }
 body div {
     letter-spacing: 1px;
     word-spacing: 1px;
 }
 body div h1 {
-    font-size: 30px;
+    font-size: 3.5vh;
     text-align: center;
     border-bottom: solid 2px;
-    margin: 5vh 20vh;
+    margin: 5vh 2vh;
 }
 body div h3 {
-    font-size: 18px;
+    font-size: 1.8vh;
     text-align: left;
     border-bottom: solid 2px;
-    margin: 1vh 50vh;
+    margin: 0vw 20vw
 }
 
 section {
