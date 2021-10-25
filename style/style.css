@@ -1,4 +1,3 @@
-/*Must reconfigure font sizes in order to accomodate it for mobile and Desktop*/
 * {
     font-family: "Baloo Tammudu 2", cursive;
     margin: 0;
@@ -14,7 +13,7 @@
 }
 #welcome h1.banner {
     color: black;
-    font-size: 46px;
+    font-size: 6vh;
     position: relative;
     text-align: center;
     padding-top: 40vh;
@@ -22,18 +21,23 @@
     border-bottom: none;
 }
 h1.banner label#cred {
-    font-size: 12px;
+    font-size: 1.2vh;
     word-spacing: 1px;
     opacity: 15%;
     color: white;
 }
 label#cred a#pic_cred {
-    font-size: 18px;
+    font-size: 1.8vh;
     color: black;
     text-decoration: underline;
 }
 
 /*nav Bar*/
+nav {
+    position: absolute;
+    font-size: 2vh;
+}
+
 a.nav {
     text-decoration: none;
 }
@@ -76,37 +80,8 @@ a.drop:hover {
     border: solid darkblue;
 }
 
-/*Body*/
-body {
-    background-color: hsl(180, 100%, 80%);
-    padding-bottom: 10vh;
-}
-p {
-    font-size: 1.8vh;
-    padding: .5vw 4vw;
-}
-body div {
-    letter-spacing: 1px;
-    word-spacing: 1px;
-}
-body div h1 {
-    font-size: 3.5vh;
-    text-align: center;
-    border-bottom: solid 2px;
-    margin: 5vh 2vh;
-}
-body div h3 {
-    font-size: 1.8vh;
-    text-align: left;
-    border-bottom: solid 2px;
-    margin: 0vw 20vw
-}
 
-section {
-    padding: 1vh 0vh;
-}
-
-/*Buttons*/
+/*Buttons specfic for homepage*/
 h3 button#p_button {
     font-size: 20px;
     background-color: transparent;
@@ -120,3 +95,54 @@ p.hide {
     display: none;
 }
 
+
+/* Homepage attributes specific to its design, not applicable to other pages */
+
+.homepage p {
+    font-size: 2vh;
+    padding: .5vw 4vw;
+}
+.homepage div {
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+.homepage div h1 {
+    font-size: 3.5vh;
+    text-align: center;
+    border-bottom: solid 2px;
+    margin: 5vh 2vh;
+}
+.homepage div h3 {
+    font-size: 1.8vh;
+    text-align: left;
+    border-bottom: solid 2px;
+    margin: 0vw 20vw
+}
+
+.homepage section {
+    padding: 1vh 0vh;
+}
+
+/* Universal Design for cohesion, and faster design process */
+.general {
+    background-color: black;
+    min-width: 70%;
+    background-color: hsl(180, 100%, 80%);
+    font-family: "Baloo Tammudu 2", cursive;
+    margin: 0vh 5vh;
+    font-size: 2.5vh;
+}
+
+body {
+    background-color: hsl(180, 100%, 80%);
+    padding-bottom: 10vh;
+}
+
+.description {
+    font-size: 1.5vh;
+}
+
+/* To seperate the Navigation from the main content of the page, otherwise it overlaps */
+.filler {
+    padding-top: 40vh;
+}

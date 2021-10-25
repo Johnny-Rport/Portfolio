@@ -1,4 +1,4 @@
-const des = document.querySelector('[valueAsDes0]');
+const des0 = document.querySelector('[valueAsDes0]');
 const des1 = document.querySelector('[valueAsDes1]');
 const des2 = document.querySelector('[valueAsDes2]');
 const des3 = document.querySelector('[valueAsDes3]');
