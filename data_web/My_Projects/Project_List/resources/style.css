@@ -1,0 +1,29 @@
+.submit {
+    padding: 1vh;
+    margin-left: 1vh;
+    color: hsl(180, 100%, 80%);
+    background-color: orange;
+
+}
+
+.newItem {
+    margin: 7vh 0vh;
+    border-top: solid 1px black;
+    
+}
+
+.newDesc {
+    position: absolute;
+    float: none;
+}
+
+.newButton {
+    position: flex;
+    float: right;
+    margin: 0.5vh;
+}
+
+/* Place holder to test */
+.newThings {
+
+}
