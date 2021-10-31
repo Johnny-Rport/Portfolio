@@ -23,7 +23,10 @@
     margin: 0.5vh;
 }
 
-/* Place holder to test */
 .newThings {
-
+    margin: 0.5vh;
+    font-size: 1.5vh; 
+    background: transparent;
+    border: 1px black solid;
+    border-radius: 5%;
 }
