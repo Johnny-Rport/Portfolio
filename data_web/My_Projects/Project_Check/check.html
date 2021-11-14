@@ -1,30 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html class="general">
     <head>
         <title>Check Calc</title>
         <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="/style/style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <nav> <!--Navigation-->
+            <a class="nav" href="/index.html">Home</a>
+
+            <a class="nav" href="/data_web/Progress/progress.html">Progress</a>
+
+            <ul class="nav"> My Projects
+                <ul>
+                    <a class="drop" href="/data_web/My_Projects/Project_UnitConvert/unitindex.html">Unit Converter</a>
+                    <a class="drop" href="/data_web/My_Projects/Project_AgeCalc/calcindex.html">Age Calculator</a>
+                    <a class="drop" href="/data_web/My_Games/GuessNum/index.html">GMN</a>
+                    <a class="drop" href="/data_web/My_Projects/Project_Check/check.html">Check Calculator</a>
+
+                </ul>
+            </ul>
+        </nav>   
+
+
     </head>
     
+    <!-- Now that you know how to append childs, use it to improve this program and the javascript involved. Use functions, create elements from appending, experiment with the tables -->
     <body>
-        <p>What is this? Well it's a project that I decided to create when I got tired of manually calculating my future pay based on the days I worked each week, before taxes unfortunately.</p>
+        <p class="filler">What is this? Well it's a project that I decided to create when I got tired of manually calculating my future pay based on the days I worked each week, before taxes unfortunately.</p>
         <p>So this program gives an <em>estimation</em> based on the wage made each hour, hours worked each day, and days worked in each week. I'll personally be using this when I'm budgeting.</p>
         
-        <div class="shown">
-            <input placeholder="Wage" type="number" shown  wage> <br>
-            <input placeholder="Hours" type='number' shown  Hour> <button shown reset>Reset</button> <br>
-            <input placeholder="Days" type='number'  shown Day> <button shown submit>Submit</button>
+        <div class="shown" home>
+            <input placeholder="Wage" type="number" first  wage> <button switch> Switch </button> <input placeholder="Wage" type="number" disabled second wage2> <br>
+            <input placeholder="Hours" type='number' first  Hour> <button reset>Reset</button> <input placeholder="Hours" type='number' disabled second Hour2> <br>
+            <input placeholder="Days" type='number'  first Day> <button  submit>Submit</button> <input placeholder="Days" type='number' disabled  second Day2>
         </div>
-
 
         
-        <div class="hidden">
-            <input placeholder="Wage" type="number" hidden  wage2> <br>
-            <input placeholder="Hours" type='number' hidden  Hour2> <button hidden reset2>Reset</button> <br>
-            <input placeholder="Days" type='number' hidden  Day2> <button hidden submit2>Submit</button>
-        </div>
         
         <div class="buttonPay">
             <button disabled daily>Daily Pay</button>
@@ -34,10 +48,11 @@
             <button disabled check>Check Pay</button>
         </div>
 
-        <div>
+        
+        <div class="table">
             <table>
                 <tr id='firstrow' >
-                    <td>Salary</td>
+                    <td>Salary: </td>
                     <td><button calc>Difference</button></td>
                     <td><button compare>Compare</button></td>
                 </tr>
@@ -47,8 +62,6 @@
             </table>
         </div>
 
-
-        <a href="/index.html">Back</a>
     </body>
 
     <script src="logic/logic.js"></script>

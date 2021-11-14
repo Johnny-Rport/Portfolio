@@ -1,29 +1,28 @@
-html {
-    font-family: "Baloo Tammudu 2", cursive;
-    background-color: hsl(180, 100%, 80%);
-    margin: 0;
-    padding: 0;
+
+
+input {
+    font-size: 1.5vh;
 }
 
-div.shown {
-    position: absolute;
+button {
+    font-size: 1.5vh;
 }
 
-div.hidden{
-    position: absolute;
-}
 
-div.buttonPay {
-    padding-top: 110px;
-    padding-bottom: 20px;
+.table {
+    padding-top: 2vh;
 }
 
 table {
     border: solid black 1px
 }
 
+tr#firstrow td {
+    border-bottom: solid black 1px;
+    border-right: solid black 1px;
+    padding-right: 5vh; 
+}
 
 table tr#secondrow td {
-    border: solid black 1px;
-    padding: 10px ;
+    padding: 10px;
 }
