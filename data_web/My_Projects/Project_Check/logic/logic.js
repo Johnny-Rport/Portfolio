@@ -57,6 +57,7 @@ reset.addEventListener('click', () => {
 
 submit.addEventListener('click', ()=> {
     submitValues(inputWage, inputHours, inputDays)
+            })
 })
 
 // Switches between first and second set of values
