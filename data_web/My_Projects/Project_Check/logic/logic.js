@@ -4,8 +4,8 @@ const inputHours = document.querySelector('[Hour]')
 const inputDays = document.querySelector('[Day]')
 
 const inputWage2 = document.querySelector('[wage2]')
-const hours2 = document.querySelector('[Hour2]')
-const days2 = document.querySelector('[Day2]')
+const inputHours2 = document.querySelector('[Hour2]')
+const inputDays2 = document.querySelector('[Day2]')
 
 // Buttons
 const dailyp = document.querySelector('[daily]')
@@ -18,50 +18,56 @@ const switchButton = document.querySelector('[switch]')
 const reset = document.querySelector('[reset]')
 const submit = document.querySelector('[submit]')
 const compare = document.querySelector('[compare]')
+const difference = document.querySelector('[difference]')
 
 // Arrays, Outputs, and more
 const pay = [dailyp, yearlyp, monthlyp, weeklyp, check]
 const firstSet = document.querySelectorAll('[first]')
 const secondSet = document.querySelectorAll('[second]')
-const outputP = document.querySelector('[result]')
+const outputResult = document.querySelector('[result]')
 let switchSets = 1
-
-
-
-// This function is essential in making the compare work
-// submit2.addEventListener('click', ()=> { 
-//     if (inputWage2.value != '' && hours2.value != '' && days2.value != '') {
-//         inputWage2.setAttribute('disabled', '')
-//         hours2.setAttribute('disabled', '')
-//         days2.setAttribute('disabled', '')
-
-
-//         pay.forEach(button => {
-//             button.removeAttribute('disabled')
-//             button.addEventListener('click', () => {
-//                 let change = true
-//                 calcPay(button.innerText[0], inputWage2.value, hours2.value, days2.value, change)
-//             })
-//         })
-//     }
-// })
 
 // Event Listeners
 switchButton.addEventListener('click', () => {
     switchInputs(firstSet, secondSet)
+    dailyp.setAttribute('disabled', '')
+    weeklyp.setAttribute('disabled', '')
+    monthlyp.setAttribute('disabled', '')
+    yearlyp.setAttribute('disabled', '')
+    check.setAttribute('disabled', '')
 })
 
 reset.addEventListener('click', () => {
-    resetValues(inputWage, inputHours, inputDays)
+    if (switchSets === 1) {
+        resetValues(inputWage, inputHours, inputDays)
+    } else if (switchSets === 0) {
+        resetValues(inputWage2, inputHours2, inputDays2)
+    }
+   
 })
 
 submit.addEventListener('click', ()=> {
-    submitValues(inputWage, inputHours, inputDays)
+    if (switchSets === 1) {
+        submitValues(inputWage, inputHours, inputDays)
+    } else if (switchSets === 0) {
+        submitValues(inputWage2, inputHours2, inputDays2)
+    }
+})
+
+compare.addEventListener('click', ()=> {
+    if (inputWage.value != '' && inputHours.value != '' && inputDays.value != '' && inputWage2.value != '' && inputHours2.value != '' && inputDays2.value != '') {
+        
+        pay.forEach(button => {
+            button.removeAttribute('disabled')
+            button.addEventListener('click', () => {
+                let change = true
+                calcPay(button.innerText[0], inputWage2.value, inputHours2.value, inputDays2.value, change)
             })
+        })
+    }
 })
 
 // Switches between first and second set of values
-// You might have to incorporate reset and submit event listeners in order to tell which set is selected
 function switchInputs (firstSet, secondSet) {
     if (switchSets === 1) {
         firstSet.forEach(element => {
@@ -90,6 +96,7 @@ function switchInputs (firstSet, secondSet) {
 
 }
 
+// Resets selected set of Values
 function resetValues (wage, hours, days) {
     wage.value = ''
     wage.removeAttribute('disabled')
@@ -97,8 +104,15 @@ function resetValues (wage, hours, days) {
     hours.removeAttribute('disabled')
     days.value = ''
     days.removeAttribute('disabled')
+
+    dailyp.setAttribute('disabled', '')
+    weeklyp.setAttribute('disabled', '')
+    monthlyp.setAttribute('disabled', '')
+    yearlyp.setAttribute('disabled', '')
+    check.setAttribute('disabled', '')
 }
 
+// Submits selected set of Values
 function submitValues (wage, hours, days) {
     if (wage.value != '' && hours.value != '' && days.value != '') {
         wage.setAttribute('disabled', '')
@@ -109,12 +123,13 @@ function submitValues (wage, hours, days) {
             button.removeAttribute('disabled')
             button.addEventListener('click', () => {
                 let change = false
-                calcPay(button.innerText[0], inputWage.value, hours.value, days.value, change)
+                calcPay(button.innerText[0], wage.value, hours.value, days.value, change)
             })
         })
     }  
 }
 
+// Outputs Pay Estimation
 function calcPay (input, wage, hour, day, compare) {
     let week = 2 // In Weeks
     let month = 4
@@ -123,22 +138,24 @@ function calcPay (input, wage, hour, day, compare) {
         case "D":
             if (compare == false) {
                 x  = (wage * hour)
-                outputP.innerText = `Pay: $${x}`
+                outputResult.innerText = `Pay: $${x}`
             } else if (compare == true) {  
                 x = (wage * hour) //Second Set
-                y = (inputWage.value * hours.value) // First Set
-                outputP.innerText = `For working ${hours.value} hours you get paid: $${y}. For working ${hour} hours you get paid: $${x}`
+                y = (inputWage.value * inputHours.value) // First Set
+                outputResult.innerText = `With a wage of $${inputWage.value} with ${inputHours.value} hour(s) for ${inputDays.value} day(s) you get paid: $${y} Daily`
+                outputResult.innerText += `\n With a wage of $${wage} with ${hour} hour(s) for ${day} day(s) you get paid: $${x} Daily`
             }
         break;
 
         case "Y":
             if (compare == false) {
                 x  = (wage * hour * day * year)
-                outputP.innerText = `Pay: $${x}`
+                outputResult.innerText = `Pay: $${x}`
             } else if (compare == true) {  
                 x = (wage * hour * day * year) 
-                y = (inputWage.value * hours.value * days.value * year )
-                outputP.innerText = `By working ${days.value} days with ${hours.value} hours each, the salary is: $${y}. With ${day} days and ${hour} hours each your salary pay is: $${x}`
+                y = (inputWage.value * inputHours.value * inputDays.value * year )
+                outputResult.innerText = `With a wage of $${inputWage.value} with ${inputHours.value} hour(s) for ${inputDays.value} day(s) you get paid: $${y} Yearly`
+                outputResult.innerText += `\n With a wage of $${wage} with ${hour} hour(s) for ${day} day(s) you get paid: $${x} Yearly`
 
             }
         break;
@@ -146,33 +163,36 @@ function calcPay (input, wage, hour, day, compare) {
         case "M":
             if (compare == false) {
                 x  = (wage * hour * day * month)
-                outputP.innerText = `Pay: $${x}`
+                outputResult.innerText = `Pay: $${x}`
             } else if (compare == true) {  
                 x = (wage * hour * day * month) 
-                y = (inputWage.value * hours.value *days.value * month )
-                outputP.innerText = `By working ${days.value} days with ${hours.value} hours each, the monthly pay will be: $${y}. With ${day} days and ${hour} hours each your monthly pay is: $${x}`
+                y = (inputWage.value * inputHours.value *inputDays.value * month )
+                outputResult.innerText = `With a wage of $${inputWage.value} with ${inputHours.value} hour(s) for ${inputDays.value} day(s) you get paid: $${y} Monthly`
+                outputResult.innerText += `\n With a wage of $${wage} with ${hour} hour(s) for ${day} day(s) you get paid: $${x} Monthly`
             }
         break;
 
         case "W":
             if (compare == false) {
                 x  = (wage * hour * day)
-                outputP.innerText = `Pay: $${x}`
+                outputResult.innerText = `Pay: $${x}`
             } else if (compare == true) {  
                 x = (wage * hour * day) 
-                y = (inputWage.value * hours.value *days.value )
-                outputP.innerText = `By working ${days.value} days with ${hours.value} hours each, you get paid: $${y}. With ${day} days and ${hour} hours each you get paid: $${x}`
+                y = (inputWage.value * inputHours.value *inputDays.value )
+                outputResult.innerText = `With a wage of $${inputWage.value} with ${inputHours.value} hour(s) for ${inputDays.value} day(s) you get paid: $${y} Weekly`
+                outputResult.innerText += `\n With a wage of $${wage} with ${hour} hour(s) for ${day} day(s) you get paid: $${x} Weekly`
             }
         break;
 
         case "C":
             if (compare == false) {
                 x  = (wage * hour * day * week)
-                outputP.innerText = `Pay: $${x}`
+                outputResult.innerText = `Pay: $${x}`
             } else if (compare == true) {  
                 x = (wage * hour * day * week) 
-                y = (inputWage.value * hours.value *days.value * week )
-                outputP.innerText = `By working ${days.value} days with ${hours.value} hours each, the check will be: $${y}. With ${day} days and ${hour} hours each your check is: $${x}`
+                y = (inputWage.value * inputHours.value * inputDays.value * week )
+                outputResult.innerText = `With a wage of $${inputWage.value} with ${inputHours.value} hour(s) for ${inputDays.value} day(s) you get paid: $${y} every check`
+                outputResult.innerText += `\n With a wage of $${wage} with ${hour} hour(s) for ${day} day(s) you get paid: $${x} every check`
             }
         break;
 

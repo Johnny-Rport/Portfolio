@@ -27,12 +27,13 @@
 
     </head>
     
-    <!-- Now that you know how to append childs, use it to improve this program and the javascript involved. Use functions, create elements from appending, experiment with the tables -->
+
     <body>
         <p class="filler">What is this? Well it's a project that I decided to create when I got tired of manually calculating my future pay based on the days I worked each week, before taxes unfortunately.</p>
         <p>So this program gives an <em>estimation</em> based on the wage made each hour, hours worked each day, and days worked in each week. I'll personally be using this when I'm budgeting.</p>
         
         <div class="shown" home>
+            
             <input placeholder="Wage" type="number" first  wage> <button switch> Switch </button> <input placeholder="Wage" type="number" disabled second wage2> <br>
             <input placeholder="Hours" type='number' first  Hour> <button reset>Reset</button> <input placeholder="Hours" type='number' disabled second Hour2> <br>
             <input placeholder="Days" type='number'  first Day> <button  submit>Submit</button> <input placeholder="Days" type='number' disabled  second Day2>
@@ -53,11 +54,10 @@
             <table>
                 <tr id='firstrow' >
                     <td>Salary: </td>
-                    <td><button calc>Difference</button></td>
                     <td><button compare>Compare</button></td>
                 </tr>
                 <tr id='secondrow'>
-                    <td result>Pay: </td>
+                    <td id='result' result>Pay: </td>
                 </tr>
             </table>
         </div>

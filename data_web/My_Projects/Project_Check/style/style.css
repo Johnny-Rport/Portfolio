@@ -6,6 +6,14 @@ input {
 
 button {
     font-size: 1.5vh;
+    background-color: hsl(180, 70%, 90%);
+    color: hsl(180, 100%, 30%);
+    border: black solid 1px;
+}
+
+button:hover {
+    color: black;
+    background-color: hsl(180, 70%, 50%);
 }
 
 
@@ -26,4 +34,6 @@ tr#firstrow td {
 table tr#secondrow td {
     padding: 10px;
 }
+td#result {
     font-size: 2.5vh
+}
