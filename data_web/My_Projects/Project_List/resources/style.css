@@ -1,9 +1,13 @@
-.submit {
-    padding: 1vh;
-    margin-left: 1vh;
+[Button] {
+    margin: 0vh 0.5vh;
     color: hsl(180, 100%, 80%);
-    background-color: orange;
+    background-color: hsl(180, 100%, 30%);
 
+}
+
+[button]:hover {
+    color: hsl(241, 70%, 50%);;
+    background-color: hsl(180, 70%, 50%);
 }
 
 .newItem {
@@ -15,12 +19,21 @@
 .newDesc {
     position: absolute;
     float: none;
+    padding: 0vh 4vh;
 }
 
 .newButton {
     position: flex;
     float: right;
     margin: 0.5vh;
+    font-size: 1.2vh;
+    color: hsl(180, 100%, 80%);
+    background-color: hsl(180, 100%, 30%);
+}
+
+.newButton:hover {
+    color: hsl(241, 70%, 50%);;
+    background-color: hsl(180, 70%, 50%);
 }
 
 .newThings {
@@ -29,4 +42,9 @@
     background: transparent;
     border: 1px black solid;
     border-radius: 5%;
+}
+
+[done] .newDesc {
+    text-decoration: line-through;
+    color: grey;
 }

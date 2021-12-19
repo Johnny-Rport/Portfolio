@@ -1,19 +1,31 @@
 const container = document.querySelector("[container]")
 const listButton = document.querySelector("[listButton]")
 const userInput = document.querySelector("[itemUser]")
+const deleteButton = document.querySelector("[deleteDone]")
 
 listButton.addEventListener('click', () => {
     const newItem = document.createElement("div")
     const newDesc = document.createElement("p")
-    const newDelete = document.createElement("button")
-    const newEdit = document.createElement("button")
     
     container.appendChild(newItem)
     newItem.classList.add('newItem')
-    
+
+    newDesc.addEventListener('click', ()=> {
+        if (newItem.hasAttribute('done') != true) {
+            markDone(newItem)
+        } else if (newItem.hasAttribute('done') == true) {
+            newItem.removeAttribute('done')
+        }
+    })
+
+    newItem.addEventListener('dblclick', ()=> {
+        editItem(newItem, newDesc)
+    })
+   
     createItem(newItem, newDesc, userInput)
-    createDelete(newItem, newDelete)
-    createEdit(newItem, newDesc, newEdit)
+    createDelete(newItem, newDesc)
+    createEdit(newItem, newDesc)
+    createDone(newItem)
 })
 
 function createItem(newItem, newDesc, newInput) {
@@ -25,27 +37,41 @@ function createItem(newItem, newDesc, newInput) {
 }  
     
     
-function createDelete(newItem, newDelete) {
+function createDelete(newItem) {
+    const newButton = document.createElement("button")
     let textContent = document.createTextNode("Delete")
-    newItem.appendChild(newDelete)
-    newDelete.appendChild(textContent)
-    newDelete.classList.add("newButton")
+    newItem.appendChild(newButton)
+    newButton.appendChild(textContent)
+    newButton.classList.add("newButton")
     
-    newDelete.addEventListener('click', ()=> {
+    newButton.addEventListener('click', ()=> {
         deleteItem(newItem)
     })
 }
 
-function createEdit(newItem, newDesc, newEdit) {
+function createEdit(newItem, newDesc) {
+    const newButton = document.createElement("button")
     let textContent = document.createTextNode("Edit")
-    newItem.appendChild(newEdit)
-    newEdit.appendChild(textContent)
-    newEdit.classList.add("newButton")
+    newItem.appendChild(newButton)
+    newButton.appendChild(textContent)
+    newButton.classList.add("newButton")
 
-    newEdit.addEventListener('click', ()=> {
+    newButton.addEventListener('click', ()=> {
         editItem(newItem, newDesc)
     })
 
+}
+
+function createDone(newItem) {
+    const newButton = document.createElement("button")
+    let textContent = document.createTextNode("Mark Done")
+    newItem.appendChild(newButton)
+    newButton.appendChild(textContent)
+    newButton.classList.add("newButton")
+
+    newButton.addEventListener('click', ()=> {
+        markDone(newItem)
+    })
 }
 
 function deleteItem(parentDiv) {
@@ -73,7 +99,20 @@ function editItem(parentDiv, parentDesc) {
         createItem(parentDiv, parentDesc, newInput)
         parentDiv.removeChild(newInput)
         parentDiv.removeChild(newSubmit)
+        parentDiv.removeAttribute('done')
 
     })
 }
 
+function markDone(newItem) {
+    newItem.setAttribute("done", "")
+
+}
+
+deleteButton.addEventListener('click', ()=> {
+    let doneItems = document.querySelectorAll('[done]')
+    doneItems.forEach(item => {
+        container.removeChild(item)
+    })
+    
+})

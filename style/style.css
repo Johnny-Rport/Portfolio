@@ -91,7 +91,7 @@ h3 button#p_button:hover {
     background-color: black;
     color: hsl(180, 100%, 80%);
 }
-p.hide {
+[hide] {
     display: none;
 }
 
