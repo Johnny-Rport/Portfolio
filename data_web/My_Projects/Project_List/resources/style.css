@@ -10,7 +10,7 @@
     background-color: hsl(180, 70%, 50%);
 }
 
-.newItem {
+[newItem] {
     margin: 7vh 0vh;
     border-top: solid 1px black;
     
@@ -23,7 +23,7 @@
 }
 
 .newButton {
-    position: flex;
+    position: relative;
     float: right;
     margin: 0.5vh;
     font-size: 1.2vh;
@@ -36,7 +36,7 @@
     background-color: hsl(180, 70%, 50%);
 }
 
-.newThings {
+.newInput {
     margin: 0.5vh;
     font-size: 1.5vh; 
     background: transparent;
@@ -44,7 +44,25 @@
     border-radius: 5%;
 }
 
+.newSubmit {
+    margin: 0.5vh;
+    font-size: 1.5vh; 
+    background: transparent;
+    border: 1px black solid;
+    border-radius: 5%;
+    position: absolute;
+    left: 25vh;
+}
+
 [done] .newDesc {
     text-decoration: line-through;
     color: grey;
+}
+
+[hide] {
+    display: none;
+}
+
+[disabled] {
+    background-color: black;
 }
