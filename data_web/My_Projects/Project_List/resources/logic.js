@@ -1,13 +1,15 @@
 const container = document.querySelector("[container]")
 const listButton = document.querySelector("[listButton]")
 const userInput = document.querySelector("[itemUser]")
-const deleteButton = document.querySelector("[deleteDone]")
+const deleteDone = document.querySelector("[deleteDone]")
 const undoButton = document.querySelector('[undoButton]')
+const redoButton = document.querySelector('[redoButton]')
 let currentState = []
 let historyState = []
 let indexCount = -1
 
-setHistory(currentState)
+// Starts recording State, and first action
+setHistory(currentState, 0)
 listButton.addEventListener('click', () => {
     const newItem = document.createElement("div")
     const newDesc = document.createElement("p")
@@ -22,55 +24,19 @@ listButton.addEventListener('click', () => {
     createDone(newItem, newDesc)
 })
 
-deleteButton.addEventListener('click', ()=> {
-    let doneItems = document.querySelectorAll('[done]')
-    doneItems.forEach(item => {
-        container.removeChild(item)
-    })
-    
-})
-
-undoButton.addEventListener('click', ()=> {
-    undoButton.setAttribute('disabled', '')
-    let verify = indexCount >= 1
-    switch(verify) {
-        case true:
-            let mainChilds = document.querySelectorAll('[newItem]')
-            mainChilds.forEach(child => {
-                container.removeChild(child)
-            })
-            
-            let indexSelector = --indexCount
-            for (let state = 0; state < historyState.length; state++) {
-                if (indexSelector == state) {
-                    currentState = historyState[state]
-                    currentState.forEach(element => {
-                        container.appendChild(element)
-                    })
-                }
-            }
-            indexCount += 2
-            setHistory(true)
-        break;
-            
-        
-        default:
-            console.log('broken')
-        break;
-    }
-})
-
+// Creates the item
 function createItem(newItem, newDesc, newInput) {
     let textContent = document.createTextNode(newInput.value)
     newItem.appendChild(newDesc)
     newDesc.appendChild(textContent)
     newDesc.classList.add("newDesc")
     undoButton.setAttribute('disabled', '')
+    redoButton.setAttribute('disabled', '')
     currentState.push(newItem)
-    setHistory(currentState)
+    setHistory(currentState, 0)
 }  
     
-    
+// Creates the Delete button for the item 
 function createDelete(newItem) {
     const newButton = document.createElement("button")
     let textContent = document.createTextNode("Delete")
@@ -83,6 +49,7 @@ function createDelete(newItem) {
     })
 }
 
+// Creates the Edit button for the item
 function createEdit(newItem, newDesc) {
     const newButton = document.createElement("button")
     let textContent = document.createTextNode("Edit")
@@ -100,6 +67,7 @@ function createEdit(newItem, newDesc) {
 
 }
 
+// Creates Done button for the item
 function createDone(newItem, newDesc) {
     const newButton = document.createElement("button")
     let textContent = document.createTextNode("Mark Done")
@@ -116,6 +84,7 @@ function createDone(newItem, newDesc) {
     })
 }
 
+// Deletes item
 function deleteItem(parentDiv) {
     let copyState = []
     currentState.filter(element => {
@@ -126,12 +95,14 @@ function deleteItem(parentDiv) {
         currentState = copyState
     })
     undoButton.removeAttribute('disabled')
+    redoButton.setAttribute('disabled', '')
 
     container.removeChild(parentDiv)
-    setHistory(currentState)
+    setHistory(currentState, 0)
     
 }
 
+// Edits item
 function editItem(parentDiv, parentDesc) {
     const newInput = document.createElement("input")
     const newSubmit = document.createElement("button")
@@ -163,7 +134,7 @@ function editItem(parentDiv, parentDesc) {
     })
 }
 
-
+// Marks item done
 function markDone(newItem) {
     if (newItem.hasAttribute('done') != true) {
         newItem.setAttribute("done", "")
@@ -173,23 +144,81 @@ function markDone(newItem) {
 
 }
 
+// Delete all items that are marked Done
+deleteDone.addEventListener('click', ()=> {
+    undoButton.removeAttribute('disabled')
+    redoButton.setAttribute('disabled', '')
+    let items = document.querySelectorAll('[newItem]')
+    let copyState = []
+    items.forEach(item => {
+        if (item.hasAttribute('done')) {
+            container.removeChild(item)
+        } else {
+            copyState.push(item)
+        }
+    })
 
-function setHistory(state) {
-    switch(state) {
-        case currentState:
-            if (indexCount < 0) {
-                indexCount += 1
-                historyState.push(state.slice())
-            } else if (indexCount >= 0) {
-                indexCount += 1
-                historyState.push(state.slice())
-                console.log(indexCount)
+    currentState = copyState
+    
+    setHistory(currentState, 0)
+})
+
+// Undos any delete action
+undoButton.addEventListener('click', ()=> {
+    undoButton.setAttribute('disabled', '')
+    redoButton.removeAttribute('disabled')
+    reverseState()
+})
+
+// Redos undo actions
+redoButton.addEventListener('click', ()=> {
+    redoButton.setAttribute('disabled', '')
+    undoButton.removeAttribute('disabled')
+    reverseState()
+})
+
+// Finds and Reverses state
+function reverseState() {
+    let verify = indexCount >= 1
+    switch(verify) {
+        case true:
+            let mainChilds = document.querySelectorAll('[newItem]')
+            mainChilds.forEach(child => {
+                container.removeChild(child)
+            })
+            
+            let indexSelector = --indexCount
+            for (let state = 0; state < historyState.length; state++) {
+                if (indexSelector == state) {
+                    currentState = historyState[state]
+                    currentState.forEach(element => {
+                        container.appendChild(element)
+                    })
+                }
             }
+
+            setHistory(currentState, 1)
+        break;
+            
+        
+        default:
+            console.log('broken')
+        break;
+    }
+}
+
+
+// Sets History
+function setHistory(state, action) {
+    switch(action) {
+        case 0:
+            indexCount += 1
+            historyState.push(state.slice())
         break;
 
-        case true:
-            historyState.push(currentState.slice())
-            console.log(indexCount)
+        case 1:
+            indexCount += 2
+            historyState.push(state.slice())
         break;
     }
 
