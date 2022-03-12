@@ -144,5 +144,5 @@ body {
 
 /* To seperate the Navigation from the main content of the page, otherwise it overlaps */
 .filler {
-    padding-top: 40vh;
+    padding-top: 20vh;
 }
