@@ -1,4 +1,48 @@
 canvas {
-    border: black solid 6px;  
-    position: center;
+    border: black solid 6px; 
+}
+
+/* Make a grid of buttons and options on the right side of the canvas */
+grid {
+    position: fixed;
+    left: 780px;
+    top: 420px;
+    display: grid;
+    row-gap: 30px;
+}
+
+[red] {
+    background-color: red;
+    color: transparent;
+    border-radius: 50%;
+}
+
+[blue] {
+    background-color: blue;
+    color: transparent;
+    border-radius: 50%;
+}
+
+[green] {
+    background-color: green;
+    color: transparent;
+    border-radius: 50%;
+}
+
+[orange] {
+    background-color: orange;
+    color: transparent;
+    border-radius: 50%;
+}
+
+[purple] {
+    background-color: purple;
+    color: transparent;
+    border-radius: 50%;
+}
+
+[black] {
+    background-color: black;
+    color: transparent;
+    border-radius: 50%;
 }
