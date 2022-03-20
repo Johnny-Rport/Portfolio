@@ -7,8 +7,10 @@ grid {
     position: fixed;
     left: 780px;
     top: 420px;
+    grid-template-columns: repeat(2, 4fr);
     display: grid;
-    row-gap: 30px;
+    row-gap: 10px;
+    column-gap: 10px;
 }
 
 [red] {
@@ -45,4 +47,24 @@ grid {
     background-color: black;
     color: transparent;
     border-radius: 50%;
+}
+
+[size] {
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+[color] {
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+
+[undo] {
+    grid-column-start: 1;
+    grid-row-start: 4;
+}
+
+[redo] {
+    grid-column-start: 2;
+    grid-row-start: 4;
 }

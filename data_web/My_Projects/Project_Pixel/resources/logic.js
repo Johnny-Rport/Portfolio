@@ -1,50 +1,15 @@
-class colorPicker {
-    constructor(color) {
-        this.color = color
-    }
-
-    setColor() {
-        switch (this.color) {
-            case 'red':
-                ctx.strokeStyle = '#FF0000'
-            break;
-
-            case 'blue':
-                ctx.strokeStyle = '#0000ff'
-            break;
-
-            case 'green':
-                ctx.strokeStyle = '#008000'
-            break;
-
-            case 'orange':
-                ctx.strokeStyle = '#ffa500'
-            break;
-
-            case 'purple':
-                ctx.strokeStyle = '#800080'
-            break;
-
-            case 'black':
-                ctx.strokeStyle = '#000000'
-            break;
-
-            default:
-                console.log("Broke")
-            break;
-        }
-    }
-    
-}
+ 
 
 const canvas = document.querySelector('canvas')
 const reset = document.querySelector('[reset]')
+const size = document.querySelector('[size]')
 const ctx = canvas.getContext('2d')
 const colors = document.querySelector('[color]')
+const brushPick = document.querySelector('[brush]')
+const erasePick = document.querySelector('[erase]')
 let color = []
-// Make an input for stroke width
-
 let doAct = false
+let brushMode = 'BRUSH'
 let x1 = 0
 let y1 = 0
 let x2
@@ -77,32 +42,106 @@ canvas.addEventListener('mousemove', (e)=> {
     }
 })
 
-
-reset.addEventListener('click', ()=> {
-    empty()
+// Brush Width
+size.addEventListener('click', ()=> {
+    ctx.lineWidth = size.value
 })
 
-function draw() {
-    ctx.beginPath()
-    ctx.lineJoin = 'round'
-    ctx.moveTo(x1, y1)
-    ctx.lineTo(x2, y2)
-    ctx.stroke()
+brushPick.addEventListener('click', ()=> {
+    setMode(brushPick.innerText.toUpperCase())
+})
 
-    requestAnimationFrame(draw)
-}
+erasePick.addEventListener('click', ()=> {
+    setMode(erasePick.innerText.toUpperCase())
+})
 
-function empty(){
+// Resets Canvas
+reset.addEventListener('click', ()=> {
     ctx.clearRect(0,0,canvas.width, canvas.height)
-}
+})
 
+// Grabs Color Options
 for (let item = 0; item < colors.childElementCount; item++) {
     color.push(colors.children[item])   
 }
 
+// Assigns an event listener that will then choose a color
 color.forEach(item => {
     item.addEventListener('click', ()=> {
-        let brush  = new colorPicker(item.attributes[0].name)
-        brush.setColor()
+        brushMode = 'BRUSH'
+        setColor(item.attributes[0].name)
     })
 })
+
+function draw() {
+    switch(brushMode) {
+        case 'BRUSH':
+            ctx.beginPath()
+            ctx.lineJoin = 'round'
+            ctx.moveTo(x1, y1)
+            ctx.lineTo(x2, y2)
+            ctx.stroke()
+
+            requestAnimationFrame(draw)
+        break;
+
+        case 'ERASE':
+            ctx.fillStyle = '#99FFFF'
+            ctx.beginPath()
+            ctx.arc(x2, y2, 10, 0, Math.PI * 2)
+            ctx.fill()
+        break;
+
+        default:
+            console.log('broke')
+        break;
+    }
+}
+
+function setColor(color) {
+    switch (color) {
+        case 'red':
+            ctx.strokeStyle = '#FF0000'
+        break;
+
+        case 'blue':
+            ctx.strokeStyle = '#0000ff'
+        break;
+
+        case 'green':
+            ctx.strokeStyle = '#008000'
+        break;
+
+        case 'orange':
+            ctx.strokeStyle = '#ffa500'
+        break;
+
+        case 'purple':
+            ctx.strokeStyle = '#800080'
+        break;
+
+        case 'black':
+            ctx.strokeStyle = '#000000'
+        break;
+
+        default:
+            console.log("Broke")
+        break;
+    }
+}
+
+function setMode(mode) {
+    switch(mode) {
+        case 'BRUSH':
+            brushMode = mode 
+        break;
+
+        case 'ERASE':
+            brushMode = mode
+        break;
+
+        default:
+            console.log("Broke")
+        break;
+    }
+}
