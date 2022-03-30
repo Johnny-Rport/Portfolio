@@ -7,6 +7,7 @@ const ctx = canvas.getContext('2d')
 const colors = document.querySelector('[color]')
 const brushPick = document.querySelector('[brush]')
 const erasePick = document.querySelector('[erase]')
+size.value = 1
 let color = []
 let doAct = false
 let brushMode = 'BRUSH'
@@ -41,6 +42,7 @@ canvas.addEventListener('mousemove', (e)=> {
 
     }
 })
+
 
 // Brush Width
 size.addEventListener('click', ()=> {
