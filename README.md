@@ -1,6 +1,6 @@
 # Portfolio Website
-After a while, this website of mine is still not professional, and is very amateurish. However, as I'm getting there, my knowledge of JS has been growing, now instead of struggling with basic logic of JS I'm now entering DOM manipulation and am planning on expanding my knowledge of the language even further. I'll also try to branch to other coding languages if it helps with my understanding of coding in general and what to expect from each language. 
+This is my first iteration of my portfolio website, I mostly messed around with it to explore the concepts of HTML, CSS, and most importantly Javascript. I believe I have enough understanding to start branching into other frameworks and tools like React or Vue. I plan to create a React iteration of this website and to completely remake my portfolio website. I will also make use of the repository system in github to make other projects larger than the small projects I did in my portfolio website. Until I have a complete understanding of coding I will keep reiterating my website until it is of prime quality. 
 
-Most if not all my problems that I originally had has been fixed, even the linking system where I originally had to predict the url if it was in this site into my personal build  in order to make the linking work, however, I since fixed that and can now navigate my version as if it was a working build in this location.
+I also just want to archive this project since it only uses vanilla HTML, CSS, and Javascript.
 
-I am far from an expert, but looking back, my understanding is vastly greater than when I only knew how to use HTML and CSS. Anyhoo [Here's the link to my website](https://johnnyportfolio.dev/)
+Anyhoo [Here's the link to my website](https://johnnyportfolio.dev/)
