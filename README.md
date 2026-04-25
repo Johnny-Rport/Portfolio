@@ -3,4 +3,7 @@ This is my first iteration of my portfolio website, I mostly messed around with 
 
 I also just want to archive this project since it only uses vanilla HTML, CSS, and Javascript.
 
-Anyhoo [Here's the link to my website](https://johnnyportfolio.dev/)
+Anyhoo [Here's the link to my website]( https://johnny-rport.github.io/Portfolio/)
+
+# Archiving - 2026
+First steps into programming, was pretty fun until I got into frameworks.
